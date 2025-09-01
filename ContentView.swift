@@ -22,8 +22,8 @@ struct ContentView: View {
                     Text(wish.title)
                 }
             }
+            .navigationTitle(NavigationTitle.wishlist)
         }
-        .navigationTitle(NavigationTitle.wishlist)
     }
 }
 
