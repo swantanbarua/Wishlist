@@ -11,3 +11,8 @@ struct NavigationTitle {
     
     static let wishlist = "Wishlist"
 }
+
+struct ImageTitle {
+    
+    static let heartCircle = "heart.circle"
+}
