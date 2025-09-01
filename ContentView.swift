@@ -26,9 +26,9 @@ struct ContentView: View {
             .overlay {
                 if wishes.isEmpty {
                     ContentUnavailableView(
-                        "My Wishlist",
+                        Heading.myWishlist,
                         systemImage: ImageTitle.heartCircle,
-                        description: Text("No wishes yet. Add one to get started")
+                        description: Text(DescriptionMsg.noWishesMsg)
                     )
                 }
             }

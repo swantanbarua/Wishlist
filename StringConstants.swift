@@ -16,3 +16,13 @@ struct ImageTitle {
     
     static let heartCircle = "heart.circle"
 }
+
+struct Heading {
+    
+    static let myWishlist = "My Wishlist"
+}
+
+struct DescriptionMsg {
+    
+    static let noWishesMsg = "No wishes yet. Add one to get started"
+}
