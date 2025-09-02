@@ -37,6 +37,8 @@ struct ContentView: View {
 }
 
 #Preview(PreviewHeading.listWithSampleData) {
+    
+    // MARK: - PROPERTIES
     let container = try! ModelContainer(
         for: Wish.self,
         configurations: ModelConfiguration(
@@ -44,7 +46,23 @@ struct ContentView: View {
         )
     )
     
+    let wishTitles = [
+        WishlistTitle.masterSwiftData,
+        WishlistTitle.buyNewIPhone,
+        WishlistTitle.practiceLatinDances,
+        WishlistTitle.travelToEurope,
+        WishlistTitle.makePositiveImpact
+    ]
+    
+    // MARK: - BODY
+    ForEach(wishTitles) { wishTitle in
+        container.mainContext.insert(
+            Wish(title: wishTitle)
+        )
+    }
+    
     return ContentView()
+        .modelContainer(container)
 }
 
 #Preview(PreviewHeading.emptyList) {
