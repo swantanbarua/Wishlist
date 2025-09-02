@@ -32,3 +32,12 @@ struct PreviewHeading {
     static let emptyList = "Empty List"
     static let listWithSampleData = "List with Sample Data"
 }
+
+struct WishlistTitle {
+    
+    static let masterSwiftData = "Master SwiftData"
+    static let buyNewIPhone = "Buy a new iPhone"
+    static let practiceLatinDances = "Practice Latin Dances"
+    static let travelToEurope = "Travel to Europe"
+    static let makePositiveImpact = "Make a positive impact"
+}
