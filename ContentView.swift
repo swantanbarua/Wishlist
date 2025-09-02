@@ -36,7 +36,7 @@ struct ContentView: View {
     }
 }
 
-#Preview("List with Sample Data") {
+#Preview(PreviewHeading.listWithSampleData) {
     let container = try! ModelContainer(
         for: Wish.self,
         configurations: ModelConfiguration(
@@ -47,7 +47,7 @@ struct ContentView: View {
     return ContentView()
 }
 
-#Preview("Empty List") {
+#Preview(PreviewHeading.emptyList) {
     ContentView()
         .modelContainer(
             for: Wish.self,

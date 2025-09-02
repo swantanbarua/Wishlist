@@ -26,3 +26,9 @@ struct DescriptionMsg {
     
     static let noWishesMsg = "No wishes yet. Add one to get started"
 }
+
+struct PreviewHeading {
+    
+    static let emptyList = "Empty List"
+    static let listWithSampleData = "List with Sample Data"
+}
