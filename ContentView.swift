@@ -36,7 +36,18 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#Preview("List with Sample Data") {
+    let container = try! ModelContainer(
+        for: Wish.self,
+        configurations: ModelConfiguration(
+            isStoredInMemoryOnly: true
+        )
+    )
+    
+    return ContentView()
+}
+
+#Preview("Empty List") {
     ContentView()
         .modelContainer(
             for: Wish.self,
