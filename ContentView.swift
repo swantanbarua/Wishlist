@@ -47,6 +47,12 @@ struct ContentView: View {
                             .imageScale(.large)
                     }
                 }
+                
+                if !wishes.isEmpty {
+                    ToolbarItem(placement: .bottomBar) {
+                        Text("\(wishes.count) wish\(wishes.count > 1 ? "es": "")")
+                    }
+                }
             }
             .alert(
                 DescriptionMsg.createNewWish,
