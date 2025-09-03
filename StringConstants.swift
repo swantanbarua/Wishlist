@@ -15,6 +15,7 @@ struct NavigationTitle {
 struct ImageTitle {
     
     static let heartCircle = "heart.circle"
+    static let plus = "plus"
 }
 
 struct Heading {
