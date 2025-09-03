@@ -26,6 +26,7 @@ struct Heading {
 struct DescriptionMsg {
     
     static let noWishesMsg = "No wishes yet. Add one to get started"
+    static let createNewWish = "Create a new wish"
 }
 
 struct PreviewHeading {
