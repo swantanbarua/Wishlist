@@ -22,6 +22,19 @@ struct ContentView: View {
             List {
                 ForEach(wishes) { wish in
                     Text(wish.title)
+                        .font(.title.weight(.light))
+                        .padding(
+                            .vertical,
+                            2
+                        )
+                        .swipeActions {
+                            Button(
+                                ButtonTitle.delete,
+                                role: .destructive
+                            ) {
+                                modelContext.delete(wish)
+                            }
+                        }
                 }
             }
             .navigationTitle(NavigationTitle.wishlist)

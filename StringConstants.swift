@@ -48,4 +48,5 @@ struct WishlistTitle {
 struct ButtonTitle {
     
     static let save = "Save"
+    static let delete = "Delete"
 }
