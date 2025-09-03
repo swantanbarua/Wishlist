@@ -14,6 +14,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var wishes: [Wish]
     @State private var isAlertShowing = false
+    @State private var title = ""
     
     // MARK: - BODY
     var body: some View {
@@ -54,7 +55,33 @@ struct ContentView: View {
 }
 
 #Preview(PreviewHeading.listWithSampleData) {
-    ContentView()
+    
+    let container = try! ModelContainer(
+        for: Wish.self,
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
+    
+    container.mainContext.insert(
+        Wish(title: WishlistTitle.masterSwiftData)
+    )
+    
+    container.mainContext.insert(
+        Wish(title: WishlistTitle.buyNewIPhone)
+    )
+    
+    container.mainContext.insert(
+        Wish(title: WishlistTitle.practiceLatinDances)
+    )
+    
+    container.mainContext.insert(
+        Wish(title: WishlistTitle.travelToEurope)
+    )
+    
+    container.mainContext.insert(
+        Wish(title: WishlistTitle.makePositiveImpact)
+    )
+    
+    return ContentView()
         .modelContainer(
             for: Wish.self,
             inMemory: true
