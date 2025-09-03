@@ -45,7 +45,10 @@ struct ContentView: View {
                 )
                 
                 Button {
-                    
+                    modelContext.insert(
+                        Wish(title: title)
+                    )
+                    title = ""
                 } label: {
                     Text(ButtonTitle.save)
                 }
