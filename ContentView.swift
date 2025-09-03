@@ -91,10 +91,7 @@ struct ContentView: View {
     )
     
     return ContentView()
-        .modelContainer(
-            for: Wish.self,
-            inMemory: true
-        )
+        .modelContainer(container)
 }
 
 #Preview(PreviewHeading.emptyList) {
