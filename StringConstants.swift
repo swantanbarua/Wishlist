@@ -27,6 +27,7 @@ struct DescriptionMsg {
     
     static let noWishesMsg = "No wishes yet. Add one to get started"
     static let createNewWish = "Create a new wish"
+    static let enterWish = "Enter a wish"
 }
 
 struct PreviewHeading {
@@ -42,4 +43,9 @@ struct WishlistTitle {
     static let practiceLatinDances = "Practice Latin Dances"
     static let travelToEurope = "Travel to Europe"
     static let makePositiveImpact = "Make a positive impact"
+}
+
+struct ButtonTitle {
+    
+    static let save = "Save"
 }

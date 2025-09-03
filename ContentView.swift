@@ -39,7 +39,16 @@ struct ContentView: View {
                 DescriptionMsg.createNewWish,
                 isPresented: $isAlertShowing
             ) {
+                TextField(
+                    DescriptionMsg.enterWish,
+                    text: $title
+                )
                 
+                Button {
+                    
+                } label: {
+                    Text(ButtonTitle.save)
+                }
             }
             .overlay {
                 if wishes.isEmpty {
