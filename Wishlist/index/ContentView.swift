@@ -12,6 +12,7 @@ struct ContentView: View {
     
     // MARK: - PROPERTIES
     @Environment(\.modelContext) private var modelContext
+    @Query private var wishes: [Wish]
     
     // MARK: - BODY
     var body: some View {
