@@ -8,7 +8,8 @@
 import Foundation
 import SwiftData
 
-struct Wish {
+@Model
+class Wish {
     
     // MARK: - PROPERTIES
     var title: String
