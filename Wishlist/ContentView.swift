@@ -24,6 +24,15 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Wishlist")
+            .overlay {
+                if wishes.isEmpty {
+                    ContentUnavailableView(
+                        "My Wishlist",
+                        systemImage: "heart.circle",
+                        description: Text("No wishes yet. Add one to get started")
+                    )
+                }
+            }
         }
     }
 }
