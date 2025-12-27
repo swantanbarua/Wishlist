@@ -14,24 +14,71 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     @Environment(\.modelContext) private var modelContext
     @Query private var wishes: [Wish]
+    @State private var isAlertShowing = false
+    @State private var title = ""
     
     // MARK: - BODY
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(wishes) { wish in
-                    Text(wish.title)
+            ForEach(wishes) { wish in
+                Text(wish.title)
+                    .font(.title.weight(.light))
+                    .padding(
+                        .vertical,
+                        2
+                    )
+                    .swipeActions {
+                        Button(
+                            "Delete",
+                            role: .destructive
+                        ) {
+                            modelContext.delete(wish)
+                        }
+                    }
+            }
+        }
+        .navigationTitle("Wishlist")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    isAlertShowing.toggle()
+                } label: {
+                    Image(systemName: "plus")
+                        .imageScale(.large)
                 }
             }
-            .navigationTitle("Wishlist")
-            .overlay {
-                if wishes.isEmpty {
-                    ContentUnavailableView(
-                        "My Wishlist",
-                        systemImage: "heart.circle",
-                        description: Text("No wishes yet. Add one to get started")
-                    )
+            
+            if !wishes.isEmpty {
+                ToolbarItem(placement: .bottomBar) {
+                    Text("\(wishes.count) wish\(wishes.count > 1 ? "es" : "")")
                 }
+            }
+        }
+        .alert(
+            "Create a new wish",
+            isPresented: $isAlertShowing
+        ) {
+            TextField(
+                "Enter a wish",
+                text: $title
+            )
+            
+            Button {
+                modelContext.insert(
+                    Wish(title: title)
+                )
+                title = ""
+            } label: {
+                Text("SAVE")
+            }
+        }
+        .overlay {
+            if wishes.isEmpty {
+                ContentUnavailableView(
+                    "My Wishlist",
+                    systemImage: "heart.circle",
+                    description: Text("No wishes yet. Add one to get started!")
+                )
             }
         }
     }
