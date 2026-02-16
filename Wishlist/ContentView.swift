@@ -21,12 +21,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ForEach(wishes) { wish in
-                Text(wish.title)
-                    .font(.title.weight(.light))
-                    .padding(
-                        .vertical,
-                        2
-                    )
+                WishTitleView(title: wish.title)
                     .swipeActions {
                         Button(
                             "Delete",
