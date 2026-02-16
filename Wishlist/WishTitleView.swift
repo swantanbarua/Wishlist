@@ -35,13 +35,19 @@ struct WishTitleView: View {
 }
 
 #Preview {
+    
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     
     do {
-        let container = try ModelContainer(for: Wish.self, configurations: config)
+        let container = try ModelContainer(
+            for: Wish.self,
+            configurations: config
+        )
+        
         let context = ModelContext(container)
         let wish = Wish(title: "Sample Wish")
         context.insert(wish)
+        
         return WishTitleView(
             modelContext: context,
             wish: wish
