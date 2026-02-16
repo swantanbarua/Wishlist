@@ -21,15 +21,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ForEach(wishes) { wish in
-                WishTitleView(title: wish.title)
-                    .swipeActions {
-                        Button(
-                            "Delete",
-                            role: .destructive
-                        ) {
-                            modelContext.delete(wish)
-                        }
-                    }
+                WishTitleView(
+                    modelContext: modelContext,
+                    wish: wish
+                )
             }
         }
         .navigationTitle("Wishlist")
